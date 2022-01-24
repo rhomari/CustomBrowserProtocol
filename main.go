@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"go-custom-browser-protocol/registryHelper"
 	"os"
 	"strings"
 )
@@ -10,10 +11,10 @@ func main() {
 	if len(os.Args) > 1 { //checking if there is more than one argument
 		switch strings.ToLower(os.Args[1]) {
 		case "install":
-			RegisterProtocol() // Resgitring the URL protocol
+			registryHelper.RegisterProtocol() // Resgitring the URL protocol
 			break
 		case "uninstall":
-			UnregisterProtocol() //Unregistring
+			registryHelper.UnregisterProtocol() //Unregistring
 			break
 		case "-open":
 			fmt.Printf("link : %s", string(os.Args[2])) // showing the link sent by the browser
